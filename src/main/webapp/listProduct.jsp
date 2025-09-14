@@ -1,14 +1,13 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 76880
-  Date: 2025/8/29
-  Time: 14:47
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" import="java.util.*"%>
+         pageEncoding="UTF-8" import="java.util.*" isELIgnored="false"%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<c:if test="${!empty user}">
+  <div align="center">
+    当前用户: ${user.name}
+  </div>
+</c:if>
 
 <table align='center' border='1' cellspacing='0'>
   <tr>
@@ -30,7 +29,7 @@
           <input type="hidden" name="pid" value="${product.id}">
           <input type="submit" value="购买">
         </form>
-      </td>
+
     </tr>
   </c:forEach>
 </table>
